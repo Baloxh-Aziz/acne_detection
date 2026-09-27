@@ -6,9 +6,13 @@ st.title("Acne Detector")
 
 model = YOLO("best.pt")
 
-uploaded = st.file_uploader("Image upload karo", type=["jpg", "jpeg", "png"])
+uploaded = st.file_uploader("Uplaod Image", type=["jpg", "jpeg", "png"])
 
 if uploaded:
     img = Image.open(uploaded)
-    results = model.predict(img, conf=0.25)
-    st.image(results[0].plot()[..., ::-1], caption="Result")
+    st.image(img, caption="Uploaded Image", width=300)
+
+    if st.button("Submit"):
+        with st.spinner("Detecting..."):
+            results = model.predict(img, conf=0.25)
+        st.image(results[0].plot()[..., ::-1], caption="Result")
