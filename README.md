@@ -2,7 +2,7 @@
 
 A simple web app that finds acne on face images using a YOLO model.
 
-You upload a photo. The app looks at it and shows where the acne is.
+You upload a photo. The app looks and shows where the acne is.
 
 👉 [Live Demo](https://acnedetection-skin-disease.streamlit.app/)
 
